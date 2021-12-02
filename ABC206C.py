@@ -7,9 +7,8 @@
 from collections import Counter
 n = int(input())
 a = list(map(int,input().split()))
-a.sort()
-x = Counter(a)
 ans = n*(n-1)//2
+x = Counter(a)
 for i in x.values():
   ans -= i*(i-1)//2
 print(ans)
