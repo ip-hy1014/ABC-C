@@ -1,12 +1,3 @@
-"""
-キャンディの色は最大で 10^9 種類あります。長さが 10^9 のリストで管理しようとすると、MLE（メモリ上限超過）になります。
-
-そこで、collections モジュールのCounter を使います。存在する要素だけを管理できるので、メモリの問題はなくなります。
-
-さらに、len(counter) で、含まれているKeyの数（≒種類数）を O(1) で求めることができます。
-ただし、ある色のキャンディの個数が 0 個でも、Keyとして含まれていれば len(counter) で数えられてしまいます。
-個数が 0 個になった色のキャンディーはdelを使って削除する必要があります。
-"""
 from collections import Counter
 N, K = map(int, input().split())
 C = list(map(int, input().split()))
