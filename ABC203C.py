@@ -1,10 +1,7 @@
-n,k = map(int, input().split())
-l = []
-for i in range(n):
-  a,b = map(int, input().split())
-  l.append([a,b])
-l.sort() #村を近い順にソートする
-ans = k #絶対所持金分は進める
+n,k = map(int,input().split())
+ans = k
+l = [list(map(int,input().split())) for _ in range(n)]
+l.sort()
 for i in range(n):
   if ans < l[i][0]: #所持金が一番最初の村に辿り着ける金額未満だったら終了
     break
