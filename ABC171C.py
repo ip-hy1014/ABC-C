@@ -2,12 +2,12 @@ n = int(input())
 # 数値→アルファベット
 def a(n):
   if n<=26:
-    return chr(64+n)
+    return chr(96+n)
   elif n%26==0:
-    return a(n//26-1)+chr(90)
+    return a(n//26-1)+chr(122)
   else:
-    return a(n//26)+chr(64+n%26)
-print(a(n).lower())
+    return a(n//26)+chr(96+n%26)
+print(a(n))
 
 # アルファベット→数値
 def alpha2num(alpha):
