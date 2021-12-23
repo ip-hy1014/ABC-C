@@ -5,9 +5,7 @@
 """
 from collections import Counter
 n,k,q = map(int,input().split())
-a = []
-for i in range(q):
-  a.append(int(input()))
-c = Counter(a)
+a = [int(input()) for _ in range(q)]
+x = Counter(a)
 for i in range(1,n+1):
-  print("Yes" if c[i]>q-k else "No") #c[i]は各参加者の得点
+  print("Yes" if x[i]>q-k else "No")
