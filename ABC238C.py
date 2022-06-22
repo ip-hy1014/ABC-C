@@ -1,16 +1,26 @@
-mod = 998244353
-def f(x):
+def s(x):
   return x*(x+1)//2
-def s():
-  n = int(input())
-  l = len(str(n))
-  ans = 0
-  for i in range(1,l+1):
-    k = min(n,10**i-1)-(10**(i-1)-1)
-    ans += f(k)
-    ans %= mod
-  return ans
-print(s())
+n = int(input())
+mod = 998244353
+l = len(str(n))
+ans = 0
+for i in range(l-1):
+  ans += s(9*10**i) #n-1桁目までの合計値
+ans += s(n-10**(l-1)+1) #残りの合計値
+print(ans%mod)
+
+#別解
+def s(x):
+  return x*(x+1)//2
+n = int(input())
+mod = 998244353
+l = len(str(n))
+ans = 0
+for i in range(1,l+1):
+  k = min(n,10**i-1)-(10**(i-1)-1)
+  ans += s(k)
+  ans %= mod
+print(ans)
 
 """
 d(j)をj桁以下の整数の数とすると、ki = min(n,d(i))-d(i-1)
