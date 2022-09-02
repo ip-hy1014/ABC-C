@@ -3,13 +3,14 @@
 #上記それぞれの個数を求める
 
 n = int(input())
-a = [-1]+list(map(int,input().split()))
+a = [0]+list(map(int,input().split()))
 c = 0
-for i,x in enumerate(a):
-  if i==x:
+for i in range(1,n+1):
+  if a[i]==i:
     c+=1
 ans = c*(c-1)//2
-for i,j in enumerate(a):
+for i in range(1,n+1):
+  j=a[i]
   if i<j and a[j]==i:
     ans+=1
 print(ans)
